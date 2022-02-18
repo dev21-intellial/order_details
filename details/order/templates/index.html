@@ -10,7 +10,7 @@
         <form method="POST" action="/">
             {% csrf_token%}
 
-            <!-- <label>customer Name</label></br>
+             <label>customer Name</label></br>
             {{form.customer}}
             </br>
             <label>product</label></br>
@@ -25,12 +25,12 @@
             <label>total_price</label></br>
             {{form.total_price}}
             </br>
-             -->
-             <label>customer Name</label></br>
+             
+             <!--<label>customer Name</label></br>
             <select>
                 <option  value="" selected="selected">---SELECT---</option>
                 {% for x in cus %}
-                 <option value="{{x.id}}">{{x.first_name}}</option>
+                 <option  name="Customer" value="{{x.first_name}}">{{x.first_name}}</option>
                 {% endfor %}
             </select>
 
@@ -39,20 +39,31 @@
             <select>
                 <option  value="" selected="selected">---SELECT---</option>
                 {% for y in pro %}
-                 <option value="{{y.id}}">{{y.name}}</option>
+                 <option  name="Product" value="{{y.name}}">{{y.name}}</option>
                 {% endfor %}
             </select></br>
             
             </br>
             <label>qty</label></br>
-            <tr><td>{{order1.qty}}</td></tr>
+            <input type="number" name="qty" value="{{order1.qty}}" >{{order1.qty}}</input>
+            </br>
+
             </br>
             <label>unit_price</label></br>
+            
+            <input type="text" name="unit_price" value="{{order1.unit_price}}"  >{{order1.unit_price}}</input>
+
             </br>
-
-
+            </br>
+            <label>total_price</label></br>
+            
 
             
+            <input type="text" name="total_price" value="{{order1.total_price}}" >{{order1.total_price}}</input></br>
+-->
+
+
+            </br>
             <input type="submit" name="=insert" value="insert" class="btn btn-primary">
             </br>
     </form>

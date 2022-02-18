@@ -21,15 +21,15 @@
             </tr>
             {% for order in order %}
             <tr>
-                <td>{{order1.id}}</td>
-                <td>{{order1.customer}}</td>
-                <td>{{order1.product}}</td>
-                <td>{{order1.qty}}</td>
-                <td>{{order1.unit_price}}</td>
+                <td>{{order.id}}</td>
+                <td>{{order.customer}}</td>
+                <td>{{order.product}}</td>
+                <td>{{order.qty}}</td>
+                <td>{{order.unit_price}}</td>
                 
                 
-                <td><a href="/delete/{{order1.id}}" class="btn btn-danger btn-sm">delete</a></td>
-                <td><a href="/edit/{{order1.id}}" class="btn btn-danger btn-sm">edit</a></td>
+                <td><a href="/delete/{{order.id}}" class="btn btn-danger btn-sm">delete</a></td>
+                <td><a href="/edit/{{order.id}}" class="btn btn-danger btn-sm">edit</a></td>
             </tr>
 
             
