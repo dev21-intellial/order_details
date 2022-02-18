@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <titile><h1> Order Entered data</h1></titile>
+    <link rel="stylesheet" href="https://maxdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <table>
+            <tr>
+                <td>order id</td>
+                <td>customer</td>
+                <td>product</td>
+                <td>qty</td>
+                <td>unit_price</td>
+                
+                
+                <td>delete</td>
+                <td>edit</td>
+            </tr>
+            {% for order in order %}
+            <tr>
+                <td>{{order1.id}}</td>
+                <td>{{order1.customer}}</td>
+                <td>{{order1.product}}</td>
+                <td>{{order1.qty}}</td>
+                <td>{{order1.unit_price}}</td>
+                
+                
+                <td><a href="/delete/{{order1.id}}" class="btn btn-danger btn-sm">delete</a></td>
+                <td><a href="/edit/{{order1.id}}" class="btn btn-danger btn-sm">edit</a></td>
+            </tr>
+
+            
+                   
+            {% endfor %}
+            
+            
+
+        </table>
+        
+    </div>
+</body>
+</html>   
