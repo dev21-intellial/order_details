@@ -9,12 +9,14 @@
     <div class="container">
         <form method="POST" action="/">
             {% csrf_token%}
-
-             <label>customer Name</label></br>
-            {{form.customer}}
             </br>
-            <label>product</label></br>
+            <label>customer name</label></br>
+            {{form.customer}}
+           
+            </br>
+            <label>product name</label></br>
             {{form.product}}
+            
             </br>
             <label>qty</label></br>
             {{form.qty}}

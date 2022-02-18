@@ -1,10 +1,12 @@
 from django.http import HttpResponse
 from django.shortcuts import render,redirect,HttpResponse
 from customer.models import customer
+
 from order.models import order1
 from product.models import product
 from order.forms import orderform
 from customer.forms import customerform
+from product.forms import productform
 from order.models import order1
 
 
@@ -18,13 +20,12 @@ def insert(request):
             except:
                 pass
     form=orderform()
-    form1=customerform()
     return render(request,'index.html',{'form':form})
 
 
 def show(request):
     orders=order1.objects.all()
-
+    
     return render(request,'show.html',{'order':orders})
 
 

@@ -9,11 +9,12 @@
     <div class="container">
         <table>
             <tr>
-                <td>order id</td>
+                
                 <td>customer</td>
                 <td>product</td>
                 <td>qty</td>
                 <td>unit_price</td>
+                <td>total_price</td>
                 
                 
                 <td>delete</td>
@@ -21,11 +22,12 @@
             </tr>
             {% for order in order %}
             <tr>
-                <td>{{order.id}}</td>
-                <td>{{order.customer}}</td>
-                <td>{{order.product}}</td>
+                
+                <td>{{order.customer.first_name}}</td>
+                <td>{{order.product.name}}</td>
                 <td>{{order.qty}}</td>
                 <td>{{order.unit_price}}</td>
+                <td>{{order.total_price}}</td>
                 
                 
                 <td><a href="/delete/{{order.id}}" class="btn btn-danger btn-sm">delete</a></td>
