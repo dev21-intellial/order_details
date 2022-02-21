@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <titile><h1>Please perfrom your update operations</h1></titile>
+    <link rel="stylesheet" href="https://maxdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <form method="post" action="/update/{{edit1.id}}">
+            {% csrf_token%}
+            
+            
+            <label>customer</label></br>
+            <select name="first_name">
+                <option  value="" selected="selected">---SELECT---</option>
+                {% for x in edit3 %}
+                <option value="{{x.id}}" >{{x.first_name}}</option>
+                {% endfor %}
+            </select>
+            </br>
+            
+            <label>product</label></br>
+            <select name="name">
+                <option  value="" selected="selected">---SELECT---</option>
+                {% for y in edit2 %}
+                <option value="{{y.id}}" >{{y.name}}</option>
+                {% endfor %}
+            </select>
+            </br>
+            <label>qty</label></br>
+            <input type="text" name="qty" value="{{edit1.qty}}">
+            </br>
+            <label>unit_price</label></br>
+            <input type="text" name="unit_price" value="{{edit1.unit_price}}">
+            </br>
+            <label>total_price</label></br>
+            <input type="text" name="total_price" value="{{edit1.total_price}}">
+            </br>
+            
+            
+        
+    </div>
+    <br>
+    <input type="submit" name="update" value="update" class="btn btn-primary">
+    <br>
+    </form>
+
+</body>
+</html>   
+
