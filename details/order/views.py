@@ -48,9 +48,9 @@ def delete(request,id):
 
 def edit(request,id):
     edit1 = order1.objects.get(id=id)
-    edit2 = product.objects.all()
-    edit3 = customer.objects.all()
-    return render(request,'edit.html',{'edit1':edit1,'edit2':edit2,'edit3':edit3})
+    print(edit1)
+    
+    return render(request,'edit.html',{'edit1':edit1})
 
 def update(request,id):
     customer_id=request.POST['first_name']
@@ -58,7 +58,7 @@ def update(request,id):
     qty=request.POST['qty']
     unit_price=request.POST['unit_price']
     total_price=request.POST['total_price']
-    data_store=order1(customer_id=customer_id,product_id=product_id,qty=qty,unit_price=unit_price,total_price=total_price)
+    data_store=order1(id=id,customer_id=customer_id,product_id=product_id,qty=qty,unit_price=unit_price,total_price=total_price)
     data_store.save()
     return redirect('/show')
 

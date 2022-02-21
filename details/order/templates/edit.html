@@ -14,18 +14,20 @@
             <label>customer</label></br>
             <select name="first_name">
                 <option  value="" selected="selected">---SELECT---</option>
-                {% for x in edit3 %}
-                <option value="{{x.id}}" >{{x.first_name}}</option>
-                {% endfor %}
+                
+                <option value="{{edit1.customer.id}}" >{{edit1.customer.first_name}}</option>
+                
             </select>
-            </br>
             
+                
+            
+            </br>
             <label>product</label></br>
             <select name="name">
                 <option  value="" selected="selected">---SELECT---</option>
-                {% for y in edit2 %}
-                <option value="{{y.id}}" >{{y.name}}</option>
-                {% endfor %}
+                
+                <option value="{{edit1.product.id}}" >{{edit1.product.name}}</option>
+                
             </select>
             </br>
             <label>qty</label></br>
