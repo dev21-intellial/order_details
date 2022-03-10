@@ -13,31 +13,31 @@
             
             <label>customer</label></br>
             <select name="first_name">
-                <option  value="" selected="selected">---SELECT---</option>
+                
                 
                 <option value="{{edit1.customer.id}}" >{{edit1.customer.first_name}}</option>
                 
             </select>
             
-                
             
             </br>
             <label>product</label></br>
             <select name="name">
-                <option  value="" selected="selected">---SELECT---</option>
+                
                 
                 <option value="{{edit1.product.id}}" >{{edit1.product.name}}</option>
                 
             </select>
             </br>
-            <label>qty</label></br>
-            <input type="text" name="qty" value="{{edit1.qty}}">
-            </br>
+            
             <label>unit_price</label></br>
-            <input type="text" name="unit_price" value="{{edit1.unit_price}}">
+            <input type="text" name="unit_price" id="unit_price" value="{{edit1.unit_price}}"readonly>
+            </br>
+            <label>qty</label></br>
+            <input type="text" name="qty" id="qty" value="{{edit1.qty}}">
             </br>
             <label>total_price</label></br>
-            <input type="text" name="total_price" value="{{edit1.total_price}}">
+            <input type="text" name="total_price" id="total_price" value="{{edit1.total_price}}"readonly>
             </br>
             
             
@@ -51,3 +51,15 @@
 </body>
 </html>   
 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <script>
+                $("#qty").keyup(function(){
+                var unit_price=$("#unit_price").val();
+                var qty=$("#qty").val();
+                var total_price= qty * unit_price
+                $("#total_price").val(total_price);
+                });
+
+
+            </script>

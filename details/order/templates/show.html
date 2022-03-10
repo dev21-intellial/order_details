@@ -3,7 +3,7 @@
 <html>
 <head>
     <titile><h1> Order Entered data</h1></titile>
-    <link rel="stylesheet" href="https://maxdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
 </head>
 <body>
     <div class="container">
@@ -12,8 +12,9 @@
                 
                 <td>customer</td>
                 <td>product</td>
-                <td>qty</td>
+                
                 <td>unit_price</td>
+                <td>qty</td>
                 <td>total_price</td>
                 
                 
@@ -25,9 +26,13 @@
                 
                 <td>{{order.customer.first_name}}</td>
                 <td>{{order.product.name}}</td>
-                <td>{{order.qty}}</td>
+                
                 <td>{{order.unit_price}}</td>
+                <td>{{order.qty}}</td>
                 <td>{{order.total_price}}</td>
+    
+
+
                 
                 
                 <td><a href="/delete/{{order.id}}" class="btn btn-danger btn-sm">delete</a></td>

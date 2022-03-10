@@ -18,6 +18,7 @@
                 {% endfor %}
             </select>
             </br>
+            
             <label>product name</label></br>
             <select name="name">
                 <option  value="" selected="selected">---SELECT---</option>
@@ -28,14 +29,15 @@
             </select>
             
             </br>
-            <label>qty</label></br>
-            <input type="number" name="qty" value="">
-            </br>
+            
             <label>unit_price</label></br>
-            <input type="text" name="unit_price" value="">
+            <input type="text" name="unit_price" id="unit_price" value="">
+            </br>
+            <label>qty</label></br>
+            <input type="number" name="qty" id="qty" value="">
             </br>
             <label>total_price</label></br>
-            <input type="text" name="total_price" value="">
+            <input type="text" name="total_price" id="total_price" value="">
             </br>
              
              <!--<label>customer Name</label></br>
@@ -73,12 +75,25 @@
             
             <input type="text" name="total_price" value="{{order1.total_price}}" >{{order1.total_price}}</input></br>
 -->
-
-
+            
             </br>
             <input type="submit" name="=insert" value="insert" class="btn btn-primary">
             </br>
+
+            
+            
     </form>
 
 </body>
 </html>   
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <script>
+                $("#qty").keyup(function(){
+                var unit_price=$("#unit_price").val();
+                var qty=$("#qty").val();
+                var total_price= qty * unit_price
+                $("#total_price").val(total_price);
+                });
+
+
+            </script>

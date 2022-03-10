@@ -16,7 +16,7 @@ class order1(models.Model):
     class Meta:
         db_table="order_table"
 
-        
+
 
 
 

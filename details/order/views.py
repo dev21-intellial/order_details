@@ -54,6 +54,7 @@ def edit(request,id):
 
 def update(request,id):
     customer_id=request.POST['first_name']
+    print(customer_id)
     product_id=request.POST['name']
     qty=request.POST['qty']
     unit_price=request.POST['unit_price']
@@ -61,4 +62,5 @@ def update(request,id):
     data_store=order1(id=id,customer_id=customer_id,product_id=product_id,qty=qty,unit_price=unit_price,total_price=total_price)
     data_store.save()
     return redirect('/show')
+    
 
